@@ -1,0 +1,19 @@
+.tab-item {
+  margin: 20px;
+}
+.button {
+  cursor: pointer;
+  outline: none;
+  font-size: 25px;
+  font-weight: 500;
+  background-color: transparent;
+  border: 0px;
+  color: white;
+}
+.special {
+  color: #fec653;
+  border-bottom: 2px solid #fec653;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
