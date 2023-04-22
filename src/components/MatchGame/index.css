@@ -1,5 +1,4 @@
 .con {
-  height: 100vh;
   width: 80vw;
 }
 .card {
@@ -54,7 +53,7 @@ span {
   padding: 40px;
 }
 .tabs-con {
-  padding: 0px;
+  padding: 50px;
   list-style-type: none;
   display: flex;
 }

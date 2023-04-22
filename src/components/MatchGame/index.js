@@ -12,6 +12,10 @@ const tabsList = [
 class MatchGame extends Component {
   state = {score: 0, count: 60, currentTab: tabsList[0].tabId}
 
+  onClickTabItem = tabId => {
+    this.setState({currentTab: tabId})
+  }
+
   render() {
     const {score, count, currentTab} = this.state
     const {imagesList} = this.props
@@ -21,7 +25,7 @@ class MatchGame extends Component {
     return (
       <div className="con">
         <div className="card">
-          <navbar className="nav-bar">
+          <nav className="nav-bar">
             <img
               src="https://assets.ccbp.in/frontend/react-js/match-game-website-logo.png"
               alt="website logo"
@@ -42,7 +46,7 @@ class MatchGame extends Component {
                 </p>
               </div>
             </div>
-          </navbar>
+          </nav>
           <div className="down">
             <div className="matched-img-con">
               <img
@@ -51,20 +55,23 @@ class MatchGame extends Component {
                 className="matched-img"
               />
             </div>
-            <ul className="tabs-con">
+
+            <div className="tabs-con">
               {tabsList.map(eachTab => (
                 <TabItem
                   key={eachTab.tabId}
                   details={eachTab}
                   isActive={eachTab.tabId === currentTab}
+                  onClickTabItem={this.onClickTabItem}
                 />
               ))}
-            </ul>
-            <ul className="images-con">
+            </div>
+
+            <div className="images-con">
               {filteredImages.map(eachImg => (
                 <ImageItem key={eachImg.id} details={eachImg} />
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
